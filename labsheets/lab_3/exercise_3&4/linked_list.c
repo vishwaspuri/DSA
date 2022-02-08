@@ -5,13 +5,6 @@
 #include <stdbool.h>
 #include <time.h>
 
-struct node
-{
-    VAL val;
-    POSITION pos;
-    ListNode *next;
-};
-
 // Global Variables
 int lastInsertedPosition = 0;
 long int heapMemoryUsed = 0;

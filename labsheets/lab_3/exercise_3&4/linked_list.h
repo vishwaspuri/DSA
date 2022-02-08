@@ -3,7 +3,11 @@
 typedef int VAL;
 typedef int POSITION;
 typedef enum {BEHIND, LEVEL, FORWARD} POSITIONS;
-typedef struct node ListNode;
+typedef struct node{
+    VAL val;
+    POSITION pos;
+    struct node *next;
+} ListNode;
 
 
 extern void insert_node_to_back(ListNode *node, ListNode *head); // inserts element to the front of the list
