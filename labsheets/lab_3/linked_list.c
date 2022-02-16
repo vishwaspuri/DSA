@@ -14,7 +14,8 @@ void insert_node_to_back(ListNode *node, ListNode *head);
 bool toss();
 int generatePosition(int N);
 
-void *myalloc(){
+void *myalloc()
+{
     heapMemoryUsed += (long int)sizeof(ListNode);
     return malloc(sizeof(ListNode));
 }
