@@ -1,0 +1,20 @@
+For 10 inputs:
+Time taken to read data from file: 0.173000 ms
+Time taken to sort data from file: 0.017000 ms
+Stack space used to sort data from file: 356
+For 100 inputs:
+Time taken to read data from file: 0.521000 ms
+Time taken to sort data from file: 0.943000 ms
+Stack space used to sort data from file: 3236
+For 1000 inputs:
+Time taken to read data from file: 2.632000 ms
+Time taken to sort data from file: 27.729000 ms
+Stack space used to sort data from file: 32036
+For 10000 inputs:
+Time taken to read data from file: 10.845000 ms
+Time taken to sort data from file: 1694.904000 ms
+Stack space used to sort data from file: 320036
+For 100000 inputs:
+Time taken to read data from file: 64.875000 ms
+Time taken to sort data from file: 274691.715000 ms
+Stack space used to sort data from file: 3200036

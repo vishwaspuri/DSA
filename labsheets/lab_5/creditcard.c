@@ -6,7 +6,8 @@ CreditCard ExtractCreditCardFromLine(char *line);
 
 CreditCard *ExtractCreditCardInformationFromFile(char *fileName) {
     // Result pointer
-    CreditCard * cards = malloc(10*sizeof(CreditCard));
+    int size=5;
+    CreditCard * cards = malloc(sizeof(CreditCard)*size);
 
     // Creating file pointer
     FILE *fp = fopen(fileName, "r");
@@ -19,7 +20,11 @@ CreditCard *ExtractCreditCardInformationFromFile(char *fileName) {
     int i=0;
     while((read = getline(&line, &len, fp)) != -1) {
         CreditCard card = ExtractCreditCardFromLine(line);
-        *(cards + i++) = card;
+        if(i==size) {
+            size = size*2;
+            cards = realloc(cards, sizeof(CreditCard)*size);
+        }
+        cards[i++] = card;
     }
 
     fclose(fp);
@@ -29,11 +34,9 @@ CreditCard *ExtractCreditCardInformationFromFile(char *fileName) {
 }
 
 CreditCard ExtractCreditCardFromLine(char *line) {
-    CreditCard *card = malloc(sizeof(CreditCard));
-    int month, year;
-    sscanf(line, "\"%lld,%s,%d/%d,%s,%s\"", &card->cno, card->bank, &month, &year, card->fir, card->las);
-    sprintf(card->expr, "%d/%d", month, year);
-    return *card;
+    CreditCard card;
+    sscanf(line, "\"%lld,%[^,],%[^,],%[^,],%[^\"]\"\n", &card.cno, card.bank, card.expr, card.fir, card.las);
+    return card;
 }
 
 void printCard(CreditCard card) {

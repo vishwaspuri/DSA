@@ -4,7 +4,7 @@
 
 #define MAX 100000
 #define MAX_NAME 256
-#define EXPIRY_DATE_SIZE 8
+#define EXPIRY_DATE_SIZE 10
 #define BANKCODE_SIZE 5
 
 typedef long long int CardNo;
